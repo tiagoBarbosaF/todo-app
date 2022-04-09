@@ -46,7 +46,7 @@ namespace Todo.Domain.Handlers
             
             _repository.Update(todo);
 
-            return new GenericCommandResult(true, "Task saved", todo);
+            return new GenericCommandResult(true, "Task updated", todo);
         }
 
         public ICommandResult Handle(MarkTodoAsDoneCommand command)
@@ -60,7 +60,7 @@ namespace Todo.Domain.Handlers
             todo.MarkAsDone();
             _repository.Update(todo);
 
-            return new GenericCommandResult(true, "Task saved", todo);
+            return new GenericCommandResult(true, "Task updated", todo);
         }
 
         public ICommandResult Handle(MarkTodoAsUndoneCommand command)
@@ -74,7 +74,7 @@ namespace Todo.Domain.Handlers
             todo.MarkAsUndone();
             _repository.Update(todo);
 
-            return new GenericCommandResult(true, "Task saved", todo);
+            return new GenericCommandResult(true, "Task updated", todo);
         }
     }
 }
